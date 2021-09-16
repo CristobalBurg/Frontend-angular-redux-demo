@@ -1,27 +1,19 @@
-# Frontend
+# Frontend Demo!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
+Aplicación web de demostración , utilizando elementos básicos de angular 10 y NGRX. La app consiste en poder desplegar una tabla
+con una lista de productos traidos desde un endpoint de una api generada en node (ver Repositorio de backend)
 
-## Development server
+## Estructura escalable y mantenible
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+La idea fue generar un componente aparte para esta tabla de productos , para separarlo del AppComponent , pensando en que más adelante
+podrian agregarse nuevos componentes. Se genera un servicio de productos encargado de hacer el llamado a la API , este es procesado
+por Redux , para cambiar el state de la aplicación. (Personalmente pienso que el patron redux esta sobredimensionado para una demo tan simple)
+Se crean 2 actions principales : Set y Unset la lista de productos. también se abstrae el reducer de los productos para anidarlo en uno de la app
+general , en caso que despues se requieran agregar más reducers.
 
-## Code scaffolding
+## Diseño con Bootstrap 4.1.1
+Instalado por npm y haciendo referencia al css en el angular.json
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Muchas gracias
+# Cristobal Burgos
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
