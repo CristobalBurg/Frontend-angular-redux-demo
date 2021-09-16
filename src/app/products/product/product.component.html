@@ -1,0 +1,42 @@
+<div class="jumbotron text-center text-dark">
+    <h2>
+        Demo Angular / Node - Cristobal Burgos
+    </h2>
+
+</div>
+
+
+<div class="container mt-5">
+    <div class="alert alert-warning text-center">
+        <p>Potenciar venta de productos en amarillo!</p>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-sm table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID </th>
+                        <th>SKU</th>
+                        <th>Nombre</th>
+                        <th>Página Producto</th>
+                        <th>Precio (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of productList" [class.table-success]="item.price > 55" [class.table-warning]="item.price <= 55">
+
+                        <td>{{item.id}}</td>
+                        <td>
+                            <span class="badge badge-info">{{item.sku}}</span>
+                        </td>
+                        <td>{{item.name}}</td>
+                        <td>
+                            <a [href]="item.url"> {{item.url}}</a>
+                        </td>
+                        <td>{{item.price | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
